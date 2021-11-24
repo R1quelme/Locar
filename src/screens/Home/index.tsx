@@ -8,6 +8,7 @@ import { api }from "../../services/api"
 import { CarDTO } from '../../dtos/CarDTO'
 
 import { Car } from '../../components/Car';
+import { Load } from '../../components/Load'
 
 import {
     Container,
@@ -20,24 +21,11 @@ import {
 export function Home(){
     const [cars, setCars] = useState<CarDTO[]>([])
     const [loading, setLoading] =useState(true)
-    interface NavigationProps {
-        navigate: (screen: string) => void;
-    }
+    
+    const navigation = useNavigation();
 
-    const navigation = useNavigation<NavigationProps>();
-
-    const carData = {
-        brand: 'Audi',
-        name: 'R$ 5 COUPÉ',
-        rent: {
-            period: 'AO DIA',
-            price: 120,
-        },
-        thumbnail: 'https://cdn.picpng.com/audi/audi-face-28582.png'
-    }
-
-    function handleCarDetails(){
-        navigation.navigate('CarDetails')
+    function handleCarDetails(car:CarDTO){
+        navigation.navigate('CarDetails', { car })
     }
 
     useEffect(() => {
@@ -74,16 +62,18 @@ export function Home(){
                 </HeaderContent>
             </Header>
 
-            <CarList 
-                data={cars}
-                keyExtractor={item => String(item)}
-                renderItem={({ item }) => 
-                    <Car 
-                        data={carData} 
-                        onPress={handleCarDetails} 
-                    />
-                }
-            />
+            { loading ? <Load /> : 
+                <CarList 
+                    data={cars}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => 
+                        <Car 
+                            data={item} 
+                            onPress={() => handleCarDetails(item)} 
+                        />
+                    }
+                />
+            }
         </Container>
     )
 }
