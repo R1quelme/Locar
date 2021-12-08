@@ -31,18 +31,12 @@ interface Params {
 }
 
 export function CarDetails(){
-    interface NavigationProps {
-        navigate: (screen: string) => void;
-        goBack: () => void
-    }
-
-    const navigation = useNavigation<NavigationProps>();
-
+    const navigation = useNavigation();
     const route = useRoute(); 
     const { car } = route.params as Params
 
     function handleConfirmRental(){
-        navigation.navigate('Scheduling')
+        navigation.navigate('Scheduling', { car });
     }
 
     function handleBack(){
