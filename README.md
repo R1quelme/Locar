@@ -21,3 +21,12 @@ expo start
 # Start the API
 npm run api
 ```
+
+<br>
+<a id="screens"></a>
+
+## :iphone: Screens
+
+<h1 align="center">
+<img alt="BlogPost" title="BlogPost" src="https://github.com/R1quelme/blog_post/blob/main/src/assets/telasApp.jpeg" width="500px"/>
+</h1>
