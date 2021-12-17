@@ -28,5 +28,5 @@ npm run api
 ## :iphone: Screens
 
 <h1 align="center">
-<img alt="BlogPost" title="BlogPost" src="https://github.com/R1quelme/blog_post/blob/main/src/assets/telasApp.jpeg" width="500px"/>
+<img alt="BlogPost" title="BlogPost" src="https://github.com/R1quelme/Locar/blob/master/src/assets/telaapp.jpeg" width="500px"/>
 </h1>
