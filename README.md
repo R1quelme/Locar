@@ -1,5 +1,5 @@
 <h1 align="center">
-  Locar
+  Rentx
 </h1>
 <div align="center">
     <a href="#about">About</a> | <a href="#howtouse">How to use</a> | <a href="#screens">Screens</a> 
