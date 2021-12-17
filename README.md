@@ -17,7 +17,6 @@ Clone the repository
 ```bash
 https://github.com/R1quelme/blog_post
 ```
-
 ```
 # Install the dependencies
 yarn
@@ -27,6 +26,6 @@ npm install
 # Start the expo
 expo start
 
-# Login google
-Put google credentials as in file env.example
+# Start the API
+npm run api
 ```
