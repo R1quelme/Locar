@@ -6,7 +6,7 @@ import { BackButton } from '../../components/BackButton';
 import { Car } from '../../components/Car';
 import { CarDTO } from '../../dtos/CarDTO';
 import { api } from '../../services/api';
-import { Load } from '../../components/Load';
+import { LoadAnimation } from '../../components/LoadAnimation';
 
 import {
     Container,
@@ -82,7 +82,7 @@ export function MyCars(){
                     Conforto, segurança e praticidade.
                 </SubTitle>
             </Header>
-            { loading ? <Load /> : 
+            { loading ? <LoadAnimation /> : 
                 <Content>
                     <Appointments>
                         <AppointmentsTitle>Agendamentos feitos</AppointmentsTitle>
