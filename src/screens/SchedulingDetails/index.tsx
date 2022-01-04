@@ -40,7 +40,7 @@ import { useEffect } from 'react';
 import format from 'date-fns/format';
 import { getPlatformDate } from '../../utils/getPlatformDate';
 import { api } from '../../services/api';
-import { SchedulingComplete } from '../SchedulingComplete';
+import { Confirmation } from '../Confirmation';
 import { Alert } from 'react-native';
 
 interface Params {
@@ -82,7 +82,11 @@ export function SchedulingDetails(){
             id: car.id,
             unavailable_dates
         })
-        .then(() => navigation.navigate('SchedulingComplete'))
+        .then(() => navigation.navigate('Confirmation', {
+            nextScreenRoute: 'Home',
+            title: 'Carro alugado!',
+            message: `Agora você só precisa ir\naté a concessionária da RENTX\npegar o seu automóvel.`
+        }))
         .catch(() => {
             setLoading(false)
             Alert.alert('Não foi possivel confirmar o agendamento.')
@@ -120,8 +124,8 @@ export function SchedulingDetails(){
                     </Description>
 
                     <Rent>
-                        <Period>{car.rent.period}</Period>
-                        <Price>R$ {car.rent.price}</Price>
+                        <Period>{car.period}</Period>
+                        <Price>R$ {car.price}</Price>
                     </Rent>
                 </Details>
 
